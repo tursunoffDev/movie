@@ -1,8 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
-import { Link } from "@material-ui/core";
+// import { Link } from "@material-ui/core";
 import CardActions from "@material-ui/core/CardActions";
 import CardMedia from "@material-ui/core/CardMedia";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -32,7 +32,7 @@ function RecipeReviewCard({ props, follows, removeFollow, setFollows }) {
 
   return (
     <Card className={classes.root}>
-      <Link href={`/singleShow/${show.id}`}>
+      <Link to={`/singleShow/${show.id}`}>
         <CardMedia
           className={classes.media}
           image={

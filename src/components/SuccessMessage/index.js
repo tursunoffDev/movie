@@ -28,6 +28,8 @@ export default function SuccessMessage() {
 
   useEffect(() => {
     render();
+
+    // eslint-disable-next-line
   }, [message]);
 
   console.log("message", message);

@@ -27,6 +27,8 @@ export default function Error() {
 
   useEffect(() => {
     render();
+
+    // eslint-disable-next-line
   }, [auth, shows, follows]);
 
   return (
