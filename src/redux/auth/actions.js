@@ -22,7 +22,6 @@ export const signUp = ({ email, password, firstname, lastname }) => {
     const firebase = getFirebase();
     const history = UseHistory();
     const firestore = getFirestore();
-
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -31,6 +30,7 @@ export const signUp = ({ email, password, firstname, lastname }) => {
           .collection("users")
           .doc(res.user.uid)
           .set({
+            uid: res.user.uid,
             firstname,
             lastname,
             email,
@@ -38,8 +38,10 @@ export const signUp = ({ email, password, firstname, lastname }) => {
             initials: firstname[0] + lastname[0],
           });
       })
-      .then(() => {
+      .then((res) => {
         dispatch({ type: "SIGNUP_SUCCESS" });
+        console.log('sign up', res)
+        // localStorage.setItem("user", res);
         history.push("/");
       })
       .catch(({ message }) => {

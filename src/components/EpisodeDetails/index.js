@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Card, Link, Button } from "@material-ui/core";
+import { Card, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
@@ -109,7 +110,7 @@ export default function RecipeReviewCard({ show }) {
               {" "}
               <strong>Official site:</strong>{" "}
               {show.url ? (
-                <Link href={show.url}>{show.url}</Link>
+                <Link to={show.url}>{show.url}</Link>
               ) : (
                 <i> no official details</i>
               )}

@@ -27,7 +27,7 @@ function UserProfile({ follows, loading, setLoading, state, profile }) {
     }
   };
 
-  console.log("state", state);
+  console.log('profile', profile)
   return (
     <>
       {loading ? (

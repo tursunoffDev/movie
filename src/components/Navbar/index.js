@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchShows, clearSearchShows, signOut } from "@/redux";
-import { useHistory, Link as LinkRouter } from "react-router-dom";
-import { AppBar, Link, Button } from "@material-ui/core";
+import { useHistory, Link } from "react-router-dom";
+import { AppBar, Button } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
@@ -37,12 +37,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            <Link
-              underline="none"
-              href="/"
-              color="inherit"
-              onClick={handleLogoClick}
-            >
+            <Link to="/" onClick={handleLogoClick} className={classes.title}>
               TV-Show
             </Link>
           </Typography>
@@ -93,9 +88,9 @@ export default function PrimarySearchAppBar() {
                   className={classes.authBtns}
                   startIcon={<LoginIcon />}
                 >
-                  <LinkRouter className={classes.link} to="/login">
+                  <Link className={classes.link} to="/login">
                     Login
-                  </LinkRouter>
+                  </Link>
                 </Button>
                 <Button
                   size="medium"
@@ -103,9 +98,9 @@ export default function PrimarySearchAppBar() {
                   color="inherit"
                   startIcon={<PersonAddIcon />}
                 >
-                  <LinkRouter className={classes.link} to="/register">
+                  <Link className={classes.link} to="/register">
                     Sign Up
-                  </LinkRouter>
+                  </Link>
                 </Button>
               </>
             )}

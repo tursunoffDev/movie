@@ -11,10 +11,8 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
+    color: "white",
+    textDecoration: "none",
   },
   search: {
     position: "relative",

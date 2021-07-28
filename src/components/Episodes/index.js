@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
-import { Link } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import CardMedia from "@material-ui/core/CardMedia";
 import useStyles from "./style";
 import { Card, Typography } from "@material-ui/core";
@@ -26,7 +26,7 @@ export default function CustomShows({ episodes }) {
         return (
           <Grid item xs={2} className={classes.item} key={show.id}>
             <Card className={classes.card}>
-              <Link href={`/episodes/${show.id}`}>
+              <Link to={`/episodes/${show.id}`}>
                 <CardMedia
                   className={classes.media}
                   image={
